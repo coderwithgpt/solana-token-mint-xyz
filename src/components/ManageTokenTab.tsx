@@ -446,11 +446,11 @@ export const ManageTokenTab: FC = () => {
 
                     <div className="space-y-2 pt-3 border-t border-white/10">
                         <p className="text-xs font-medium text-gray-400 flex items-center gap-1.5"><Link2 className="w-3.5 h-3.5" /> Extensions</p>
-                        <input type="url" value={metadataForm.website} onChange={(e) => setMetadataForm(prev => ({ ...prev, website: e.target.value }))} placeholder="https://yourproject.com" className="w-full bg-dark-700 border border-white/10 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-500 focus:outline-none" />
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                            <input type="url" value={metadataForm.twitter} onChange={(e) => setMetadataForm(prev => ({ ...prev, twitter: e.target.value }))} placeholder="https://x.com/yourhandle" className="bg-dark-700 border border-white/10 rounded-lg px-2 py-1.5 text-white text-xs placeholder-gray-500" />
-                            <input type="url" value={metadataForm.telegram} onChange={(e) => setMetadataForm(prev => ({ ...prev, telegram: e.target.value }))} placeholder="https://t.me/yourgroup" className="bg-dark-700 border border-white/10 rounded-lg px-2 py-1.5 text-white text-xs placeholder-gray-500" />
-                            <input type="url" value={metadataForm.discord} onChange={(e) => setMetadataForm(prev => ({ ...prev, discord: e.target.value }))} placeholder="https://discord.gg/xxx" className="bg-dark-700 border border-white/10 rounded-lg px-2 py-1.5 text-white text-xs placeholder-gray-500" />
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <input type="url" value={metadataForm.website} onChange={(e) => setMetadataForm(prev => ({ ...prev, website: e.target.value }))} placeholder="https://yourproject.com" className="bg-dark-700 border border-white/10 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-500 focus:outline-none" />
+                            <input type="url" value={metadataForm.twitter} onChange={(e) => setMetadataForm(prev => ({ ...prev, twitter: e.target.value }))} placeholder="https://x.com/yourhandle" className="bg-dark-700 border border-white/10 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-500 focus:outline-none" />
+                            <input type="url" value={metadataForm.telegram} onChange={(e) => setMetadataForm(prev => ({ ...prev, telegram: e.target.value }))} placeholder="https://t.me/yourgroup" className="bg-dark-700 border border-white/10 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-500 focus:outline-none" />
+                            <input type="url" value={metadataForm.discord} onChange={(e) => setMetadataForm(prev => ({ ...prev, discord: e.target.value }))} placeholder="https://discord.gg/xxx" className="bg-dark-700 border border-white/10 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-500 focus:outline-none" />
                         </div>
                         <p className="text-[10px] sm:text-xs text-gray-500">Enter full URLs (e.g., https://x.com/yourhandle)</p>
                     </div>
