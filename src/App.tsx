@@ -27,20 +27,20 @@ function App() {
 
         <Header network={network} onNetworkChange={setNetwork} />
 
-        <main className="relative pt-28 pb-16 px-4">
+        <main className="relative pt-20 sm:pt-28 pb-8 sm:pb-16 px-3 sm:px-4">
           {/* Title */}
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-dark-700/50 border border-white/5 mb-4">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-dark-700/50 border border-white/5 mb-3 sm:mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-sol-green animate-pulse" />
               <span className="text-xs text-gray-400">{network}</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-3">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-2 sm:mb-3">
               <span className="bg-gradient-to-r from-white via-sol-purple to-sol-green bg-clip-text text-transparent">
                 Solana Token Mint
               </span>
             </h1>
-            <p className="text-gray-400">
+            <p className="text-sm sm:text-base text-gray-400">
               Free &amp; Open Source SPL Token Creator
             </p>
           </div>

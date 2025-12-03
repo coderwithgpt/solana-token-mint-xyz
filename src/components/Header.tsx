@@ -61,23 +61,26 @@ export const Header: FC<HeaderProps> = ({ network, onNetworkChange }) => {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b" style={{ backgroundColor: 'rgba(27, 3, 61, 0.85)', borderColor: 'rgba(27, 3, 61, 0.5)' }}>
-            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                    <img src="/logo.png" alt="Solana Token Mint" className="w-10 h-10 rounded-xl" />
-                    <div>
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+                <div className="flex items-center gap-2 sm:gap-3">
+                    <img src="/logo.png" alt="Solana Token Mint" className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl" />
+                    <div className="hidden sm:block">
                         <h1 className="text-xl font-bold bg-gradient-to-r from-sol-purple via-sol-green to-sol-cyan bg-clip-text text-transparent">
                             Solana Token Mint
                         </h1>
                         <p className="text-xs text-gray-500">Create SPL Tokens</p>
                     </div>
+                    <h1 className="sm:hidden text-base font-bold bg-gradient-to-r from-sol-purple via-sol-green to-sol-cyan bg-clip-text text-transparent">
+                        SolMint
+                    </h1>
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 sm:gap-4">
                     {/* Network Selector */}
                     <div className="relative" ref={dropdownRef}>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-white cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-sol-purple/50"
+                            className="flex items-center gap-1 sm:gap-2 rounded-lg sm:rounded-xl px-2 sm:px-4 py-2 sm:py-2.5 text-sm font-medium text-white cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-sol-purple/50"
                             style={{ backgroundColor: 'rgba(27, 3, 61, 0.6)', border: '1px solid rgba(153, 69, 255, 0.2)' }}
                             onMouseEnter={(e) => {
                                 e.currentTarget.style.borderColor = 'rgba(153, 69, 255, 0.4)';
@@ -89,7 +92,7 @@ export const Header: FC<HeaderProps> = ({ network, onNetworkChange }) => {
                             }}
                         >
                             <span className={selectedNetwork.color}>{selectedNetwork.icon}</span>
-                            <span>{selectedNetwork.label}</span>
+                            <span className="hidden sm:inline">{selectedNetwork.label}</span>
                             <svg
                                 className={`w-4 h-4 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`}
                                 fill="none"

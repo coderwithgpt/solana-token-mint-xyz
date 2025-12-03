@@ -295,16 +295,16 @@ export const ManageTokenTab: FC = () => {
     };
 
     return (
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
             {/* Mode Tabs */}
-            <div className="flex rounded-xl bg-dark-700/50 p-1">
+            <div className="flex rounded-lg sm:rounded-xl bg-dark-700/50 p-1">
                 <button type="button" onClick={() => { setMode('metadata'); setError(null); setUpdateSuccess(false); setRevokeSuccess(false); }}
-                    className={`flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all flex items-center justify-center gap-2 ${mode === 'metadata' ? 'bg-sol-blue/20 text-sol-blue' : 'text-gray-400 hover:text-white'}`}>
-                    <Pencil className="w-4 h-4" /> Update Metadata
+                    className={`flex-1 py-2.5 sm:py-3 px-2 sm:px-4 rounded-md sm:rounded-lg font-medium text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${mode === 'metadata' ? 'bg-sol-blue/20 text-sol-blue' : 'text-gray-400 hover:text-white'}`}>
+                    <Pencil className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> <span className="hidden xs:inline">Update</span> Metadata
                 </button>
                 <button type="button" onClick={() => { setMode('revoke'); setError(null); setUpdateSuccess(false); setRevokeSuccess(false); }}
-                    className={`flex-1 py-3 px-4 rounded-lg font-medium text-sm transition-all flex items-center justify-center gap-2 ${mode === 'revoke' ? 'bg-red-500/20 text-red-400' : 'text-gray-400 hover:text-white'}`}>
-                    <Lock className="w-4 h-4" /> Revoke Authorities
+                    className={`flex-1 py-2.5 sm:py-3 px-2 sm:px-4 rounded-md sm:rounded-lg font-medium text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 sm:gap-2 ${mode === 'revoke' ? 'bg-red-500/20 text-red-400' : 'text-gray-400 hover:text-white'}`}>
+                    <Lock className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> Revoke
                 </button>
             </div>
 
@@ -437,22 +437,22 @@ export const ManageTokenTab: FC = () => {
                         )}
                     </div>
 
-                    <div className="grid grid-cols-2 gap-3">
-                        <div className="space-y-1"><label className="block text-xs font-medium text-gray-400">New Name <span className="text-sol-purple">*</span></label><input type="text" value={metadataForm.name} onChange={(e) => setMetadataForm(prev => ({ ...prev, name: e.target.value }))} placeholder="Token Name" className="w-full bg-dark-700 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sol-blue/50" required /></div>
-                        <div className="space-y-1"><label className="block text-xs font-medium text-gray-400">New Symbol <span className="text-sol-purple">*</span></label><input type="text" value={metadataForm.symbol} onChange={(e) => setMetadataForm(prev => ({ ...prev, symbol: e.target.value }))} placeholder="SYMBOL" maxLength={10} className="w-full bg-dark-700 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm uppercase placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sol-blue/50" required /></div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                        <div className="space-y-1"><label className="block text-xs font-medium text-gray-400">New Name <span className="text-sol-purple">*</span></label><input type="text" value={metadataForm.name} onChange={(e) => setMetadataForm(prev => ({ ...prev, name: e.target.value }))} placeholder="Token Name" className="w-full bg-dark-700 border border-white/10 rounded-lg px-3 py-2 sm:py-2.5 text-white text-xs sm:text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sol-blue/50" required /></div>
+                        <div className="space-y-1"><label className="block text-xs font-medium text-gray-400">New Symbol <span className="text-sol-purple">*</span></label><input type="text" value={metadataForm.symbol} onChange={(e) => setMetadataForm(prev => ({ ...prev, symbol: e.target.value }))} placeholder="SYMBOL" maxLength={10} className="w-full bg-dark-700 border border-white/10 rounded-lg px-3 py-2 sm:py-2.5 text-white text-xs sm:text-sm uppercase placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sol-blue/50" required /></div>
                     </div>
 
                     <div className="space-y-1"><label className="block text-xs font-medium text-gray-400">Description</label><textarea value={metadataForm.description} onChange={(e) => setMetadataForm(prev => ({ ...prev, description: e.target.value }))} placeholder="Describe your token..." rows={2} className="w-full bg-dark-700 border border-white/10 rounded-lg px-3 py-2.5 text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sol-blue/50 resize-none" /></div>
 
                     <div className="space-y-2 pt-3 border-t border-white/10">
                         <p className="text-xs font-medium text-gray-400 flex items-center gap-1.5"><Link2 className="w-3.5 h-3.5" /> Extensions</p>
-                        <input type="url" value={metadataForm.website} onChange={(e) => setMetadataForm(prev => ({ ...prev, website: e.target.value }))} placeholder="https://yourproject.com" className="w-full bg-dark-700 border border-white/10 rounded-lg px-3 py-2 text-white text-sm placeholder-gray-500 focus:outline-none" />
-                        <div className="grid grid-cols-3 gap-2">
+                        <input type="url" value={metadataForm.website} onChange={(e) => setMetadataForm(prev => ({ ...prev, website: e.target.value }))} placeholder="https://yourproject.com" className="w-full bg-dark-700 border border-white/10 rounded-lg px-3 py-2 text-white text-xs sm:text-sm placeholder-gray-500 focus:outline-none" />
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                             <input type="url" value={metadataForm.twitter} onChange={(e) => setMetadataForm(prev => ({ ...prev, twitter: e.target.value }))} placeholder="https://x.com/yourhandle" className="bg-dark-700 border border-white/10 rounded-lg px-2 py-1.5 text-white text-xs placeholder-gray-500" />
                             <input type="url" value={metadataForm.telegram} onChange={(e) => setMetadataForm(prev => ({ ...prev, telegram: e.target.value }))} placeholder="https://t.me/yourgroup" className="bg-dark-700 border border-white/10 rounded-lg px-2 py-1.5 text-white text-xs placeholder-gray-500" />
                             <input type="url" value={metadataForm.discord} onChange={(e) => setMetadataForm(prev => ({ ...prev, discord: e.target.value }))} placeholder="https://discord.gg/xxx" className="bg-dark-700 border border-white/10 rounded-lg px-2 py-1.5 text-white text-xs placeholder-gray-500" />
                         </div>
-                        <p className="text-xs text-gray-500">Enter full URLs (e.g., https://x.com/yourhandle)</p>
+                        <p className="text-[10px] sm:text-xs text-gray-500">Enter full URLs (e.g., https://x.com/yourhandle)</p>
                     </div>
 
                     {metadataUrl && <div className="bg-dark-700/50 rounded-lg p-2 border border-sol-cyan/30"><p className="text-xs text-gray-500">Metadata:</p><a href={metadataUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-sol-cyan hover:underline break-all">{metadataUrl}</a></div>}

@@ -46,11 +46,20 @@ body {
 /* Solana wallet adapter overrides */
 .wallet-adapter-button {
   background: linear-gradient(135deg, #9945FF 0%, #14F195 100%) !important;
-  border-radius: 12px !important;
+  border-radius: 8px !important;
   font-family: "Space Grotesk", sans-serif !important;
   font-weight: 600 !important;
-  padding: 12px 24px !important;
+  padding: 8px 12px !important;
+  font-size: 12px !important;
   transition: all 0.3s ease !important;
+}
+
+@media (min-width: 640px) {
+  .wallet-adapter-button {
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    font-size: 14px !important;
+  }
 }
 
 .wallet-adapter-button:hover {
